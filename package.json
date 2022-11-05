@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "name": "imrans-team-profile-generator",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imran7rassi/Imrans-Team-Profile-Generator.git"
+  },
+  "author": "Imran Rasi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imran7rassi/Imrans-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/imran7rassi/Imrans-Team-Profile-Generator#readme"
+}
