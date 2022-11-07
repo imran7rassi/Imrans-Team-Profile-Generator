@@ -1,6 +1,6 @@
 
 
-// Import Employee class //
+// Import Engineer class //
 
 const Engineer = require("../lib/Engineer");
 
