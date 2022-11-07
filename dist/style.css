@@ -1,4 +1,5 @@
 
+/* adding style for the mian page */
 
 * {
     padding: 0;
@@ -8,6 +9,8 @@
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
+/* adding style for the body of the page */
+
   body {
     display: flex;
     flex-direction: column;
@@ -15,17 +18,43 @@
     align-items: center;
   }
   
+/* the h1 styling and font */
 
   h1 {
-    Font-Family: 'Merriweather', Serif;
-    font-size: 45px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
+    Font-Family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
     font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase; 
 }
 
 h2 {
     font-weight: bold;
+}
+
+/* the team profile styling */
+
+.team-profile-header {
+    background-color: #fd4141;
+    padding: 2rem;
+}
+
+/* the styling for the employee card classes */
+
+.employee-card {
+    box-shadow: 5px 3px 9px 1px #465E73;
+}
+
+.card-header {
+    background: #b3d5f3;
+}
+
+.card-body {
+    color: #71b6f3;
+}
+
+a {
+    color: #5c2249;
 }
 
 span {
