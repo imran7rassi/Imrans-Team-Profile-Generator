@@ -18,7 +18,7 @@ test("Can set name via arguments", () => {
 
 // test for the ID //
 test("Testing ID.", () => {
-    const id = 4;
+    const id = 1;
     const employeeInstance = new Employee("Ahmad", id);
     expect(employeeInstance.id).toBe(id);
 })
@@ -48,13 +48,13 @@ test("Can get id via getId()", () => {
 // test for getting email via getemail //
 test("Can get email via getEmail()", () => {
   const testValue = "test@test.com";
-  const e = new Employee("Foo", 4, testValue);
+  const e = new Employee("Ahmad", 1, testValue);
   expect(e.getEmail()).toBe(testValue);
 });
 
 // tset for getRole //
 test("getRole() should return \"Employee\"", () => {
   const testValue = "Employee";
-  const e = new Employee("Ahmad", 4, "test@test.com");
+  const e = new Employee("Ahmad", 1, "test@test.com");
   expect(e.getRole()).toBe(testValue);
 });
