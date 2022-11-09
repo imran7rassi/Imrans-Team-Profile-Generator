@@ -58,7 +58,8 @@ function runApp () {
 // adding the questions for creating manager //
 
 function addManager() {
-    inquirer.prompt ([
+    inquirer
+        .prompt ([
 
     // questions array include: //
     // name, ID, Email & Office number //
@@ -120,7 +121,7 @@ function addManager() {
 }
 
 
-// adding the questions for creating manager //
+// adding the questions for creating Engineer //
 function addEngineer() {
     inquirer
         .prompt([
@@ -181,4 +182,69 @@ function addEngineer() {
 
     });
 
-  }
+}
+
+// adding the questions for creating Intern //
+function addIntern() {
+    inquirer
+        .prompt([
+
+
+    // adding the name if there is no name inputed return an err //
+        {
+            type: 'input',
+            name: 'name',
+            message: `What is the Intern's name?(Required)`,
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return "Please enter intern's name." }
+            },
+        },
+
+    // adding the ID if there is no ID inputed return an err //
+        {
+            type: 'input',
+            name: 'id',
+            message: `What is the Intern's employee ID?(Required)`,
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return "Please enter intern's id." }
+            },
+        },
+
+    // adding the Email if there is not validated email inputed return an err //
+        {
+            type: 'input',
+            name: 'email',
+            message: `What is the Intern's email address?(Required)`,
+            validate: (value) => {
+                if (emailValidator.validate(value)) {
+                    return true
+                } else { return 'Please enter a valid email address.' }
+            },
+        },
+
+    // adding the School if there is no School inputed return an err //
+        {
+            type: 'input',
+            name: 'school',
+            message: `What school did the intern go to?(Required)`,
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return "Please enter the name of school." }
+            },
+        },
+
+        ])
+
+        .then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            teamArray.push(intern);
+            createTeam();
+          });
+      
+ }
+      
