@@ -15,9 +15,7 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 // Output file path and name
 const outputPath = path.join(DIST_DIR, 'team.html');
 // Import HTML template
-const templateHTML = require('./src/template.js');
-// Import the email validator //
-const emailValidator = require('email-validator');
+const generateTeam = require('./src/template.js');
 
 
 // adding the team array to select who will be in our team //
@@ -53,7 +51,6 @@ function runApp () {
       }
     })
   }
-}
 
 // adding the questions for creating manager //
 
@@ -88,13 +85,13 @@ function addManager() {
             },
         },
 
-    // adding the Email if there is not validated email inputed return an err //
+    // adding the Email if there is no  email inputed return an err //
         {
             type: 'input',
             name: 'managerEmail',
             message: 'Email address of the team manager?(Required)',
             validate: (value) => {
-                if (emailValidator.validate(value)) {
+                if (value) {
                     return true
                 } else { return 'Please enter a valid email address.' }
             },
@@ -129,7 +126,7 @@ function addEngineer() {
     // adding the name if there is no name inputed return an err //
         {
             type: 'input',
-            name: 'name',
+            name: 'engineerName',
             message: `What is the engineers's name?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -141,7 +138,7 @@ function addEngineer() {
     // adding the ID if there is no ID inputed return an err //
         {
             type: 'input',
-            name: 'id',
+            name: 'engineerId',
             message: `What is the engineer's employee ID?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -150,13 +147,13 @@ function addEngineer() {
             },
         },
 
-    // adding the Email if there is not validated email inputed return an err //
+    // adding the Email if there is no email inputed return an err //
         {
             type: 'input',
-            name: 'email',
+            name: 'engineerEmail',
             message: `What is the engineer's email address?(Required)`,
             validate: (value) => {
-                if (emailValidator.validate(value)) {
+                if (value) {
                     return true
                 } else { return 'Please enter a valid email address.' }
             },
@@ -165,7 +162,7 @@ function addEngineer() {
     // adding the GitHub account if there is no GitHub username inputed return an err //
         {
             type: 'input',
-            name: 'gitHub',
+            name: 'engineerGithub',
             message: `What is the engineer's github profile name?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -193,7 +190,7 @@ function addIntern() {
     // adding the name if there is no name inputed return an err //
         {
             type: 'input',
-            name: 'name',
+            name: 'internName',
             message: `What is the Intern's name?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -205,7 +202,7 @@ function addIntern() {
     // adding the ID if there is no ID inputed return an err //
         {
             type: 'input',
-            name: 'id',
+            name: 'internId',
             message: `What is the Intern's employee ID?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -214,13 +211,13 @@ function addIntern() {
             },
         },
 
-    // adding the Email if there is not validated email inputed return an err //
+    // adding the Email if there is no email inputed return an err //
         {
             type: 'input',
-            name: 'email',
+            name: 'internEmail',
             message: `What is the Intern's email address?(Required)`,
             validate: (value) => {
-                if (emailValidator.validate(value)) {
+                if (value) {
                     return true
                 } else { return 'Please enter a valid email address.' }
             },
@@ -229,7 +226,7 @@ function addIntern() {
     // adding the School if there is no School inputed return an err //
         {
             type: 'input',
-            name: 'school',
+            name: 'internSchool',
             message: `What school did the intern go to?(Required)`,
             validate: (value) => {
                 if (value) {
@@ -246,5 +243,26 @@ function addIntern() {
             createTeam();
           });
       
+   }
+
+// At last when you done with your Team members or
+// you can choose the No more members needed 
+// & the HTML file will be created .
+
+
+ // Build the HTML file //
+
+    function htmlBuilder () {
+        console.log("Team created!")
+
+        fs.writeFileSync(outputPath, generateTeam(teamArray), "UTF-8")
+
+    }
+
+// Function for creating the Team //
+    createTeam();
+
  }
-      
+
+// Running the App //
+runApp();

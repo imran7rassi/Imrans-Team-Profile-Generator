@@ -146,6 +146,7 @@ module.exports = team => {
     
             <div class="row">
                 <div class="team-area col-12 d-flex justify-content-center mt-5">
+                <div class="card employee-card mr-4 ml-4 mb-3">
                     ${generateTeam(team)}
                 </div>
             </div>
