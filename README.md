@@ -22,6 +22,7 @@ The objective for this project was to build a Node.js command-line application t
 ## Video Walk Through
 
 
+![Demo for Walkthrough](./Assets/team-profile.gif)
 
 ## Usage 
 
@@ -31,6 +32,8 @@ The objective for this project was to build a Node.js command-line application t
 4. And the Answer for Every Question is Required.
 5. When finished select the "No more members needed." .
 6. Your Team Member HTML will be Generated.
+
+![Team HTML Webpage Screenshot](./Assets/team_profile.png)
 
 ## License
 
